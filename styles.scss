@@ -185,14 +185,57 @@ nav {
     left:0;
     bottom:0;
     top:0;
-    background-color: rgba(0, 0, 0, 0.709);
+    background-color: rgba(0, 0, 0, 0.959);
     z-index: 10;
     transition: 1s;
     overflow-x: hidden;
     display: none;
 
+    div {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        padding:50px;
+        a {
+            font-size: 30px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-size: calc(3vw + 20px);
+            margin: 5px;
+
+            &:hover {
+                color: white;
+                -webkit-text-fill-color: white;
+
+                &::before {
+                    width: 100%;
+                    left:0;
+                }
+            }
+
+            &::before {
+                width: 0;
+                height: 3px;
+                position: absolute;
+                left: 50%;
+                right: 0;
+                bottom: 0;
+                content: "";
+                -webkit-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+                background-color: #ffffff;
+            }
+        }
+    }
     img {
-        height: 100px;
+        height: 80px;
+        margin:0;
+        top:30px;
+        left:30px;
+        position: absolute;
     }
 }
 
@@ -211,6 +254,7 @@ nav {
         justify-content: space-evenly;
         align-items: center;
         flex-direction: row;
+        background: linear-gradient(to top, rgb(38, 18, 129),rgb(51, 11, 66));
 
         &[data="podcast"] { 
             background: linear-gradient(to top, rgb(129, 18, 18),rgb(76, 67, 54));
@@ -284,6 +328,54 @@ nav {
             }
         }
 
+        &[data="contact"] {
+        background: rgb(87, 111, 197);
+        display: grid;
+        justify-content: space-evenly;
+        grid-template-columns: 2;
+        align-items: center;
+        color:black;
+        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.527);
+
+        .discord-wrap {
+            width: 310px;
+            border-radius: 10px;
+            background-color: #fff;
+            height: 500px;
+            color: black;
+            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.212);
+            margin: 40px;
+            grid-column-start: 1;
+            grid-column-end: 1;
+
+            &:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.212);
+            }
+
+            h1, p {
+                margin: 10px;
+                text-align: center;
+                color: black;
+            }
+
+            h1 {
+                font-weight: 800;
+                font-size: 30px;
+                width: 300px;
+            }
+
+            p {
+                font-size: 20px
+            }
+        } 
+    }
+
+    div.section {
+        display: flex;
+        width: 100%;
+    }
+
         .h1-wrap {
             background-color: #fff;
             width: 300px;
@@ -311,7 +403,6 @@ nav {
                 transform: scale(2)
             }
         }
-    }
 
 
         .merch-info-wrap {
@@ -352,46 +443,6 @@ nav {
                 }
             }
 
-            
-
-    div[data="contact"] {
-        background: rgb(87, 111, 197);
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        color:black;
-        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.527);
-
-        .discord-wrap {
-            width: 310px;
-            border-radius: 10px;
-            background-color: #fff;
-            height: 500px;
-            color: black;
-            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.212);
-            margin: 40px;
-
-            &:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.212);
-            }
-
-            h1, p {
-                margin: 10px;
-                text-align: center;
-                color: black;
-            }
-
-            h1 {
-                font-weight: 800;
-                font-size: 30px;
-                width: 300px;
-            }
-
-            p {
-                font-size: 20px
-            }
-        }
 
         h1 {
             margin: 50px;
@@ -525,6 +576,10 @@ div.hero {
     display: none;
     opacity: 0;
 }
+
+  .section {
+      height: 100%;
+  }
   
 footer {
         height: 80px;

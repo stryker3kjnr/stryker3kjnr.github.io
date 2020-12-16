@@ -52,34 +52,31 @@ function urlhash(link) {
     window.location.hash = link;
 }
 
-
-setInterval(function(){
-    if (window.location.hash == '#merch') {
-    document.querySelector('#merchlink').classList.add('active');
-} else if (window.location.hash !== '#merch') {
-    document.querySelector('#merchlink').classList.remove('active');
-} 
+const sections = document.querySelectorAll(".section");
 
 if (window.location.hash == '#about') {
-    document.getElementById('aboutlink').classList.add('active');
-} else if (window.location.hash !== '#about') {
     document.querySelector('#aboutlink').classList.remove('active');
-}
+let options = {
+  rootMargin: "0px",
+  threshold: 0.75
+};
 
-if (window.location.hash == '#podcast') {
-    document.getElementById('podcastlink').classList.add('active');
-} else if (window.location.hash !== '#podcast') {
-    document.querySelector('#podcastlink').classList.remove('active');
-}
+const callback = (entries, observer) => {
+  entries.forEach(entry => {
+		const { target } = entry;
+		
+		if (entry.intersectionRatio >= 0.75) {
+			target.classList.add("is-visible");
+		} else {
+			target.classList.remove("is-visible");
+		}
+  });
+};
 
-if (window.location.hash == '#home') {
-    document.getElementById('homelink').classList.add('active');
-} else if (window.location.hash !== '#home') {
-    document.querySelector('#homelink').classList.remove('active');
-}
+const observer = new IntersectionObserver(callback, options);
 
-if (window.location.hash == '') {
-    document.getElementById('aboutlink').classList.remove('active');
-    document.querySelector('#merchlink').classList.remove('active');
-}
-},100)
+sections.forEach((section, index) => {
+  const sectionChildren = [section.children];
+
+  observer.observe(section);
+});
