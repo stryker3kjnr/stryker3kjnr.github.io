@@ -26,6 +26,7 @@ html {
     color: white;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 body {
@@ -34,7 +35,7 @@ body {
     background-color: rgb(0, 0, 0);
     margin:0;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
 
     a {
         color: blue;
@@ -61,10 +62,20 @@ h1.title {
     padding: 10px;
 }
 
+sky {
+    position: fixed;
+    touch-action: none;
+    pointer-events: none;
+    top:0;
+    left:0;
+    right:0;
+    z-index:999;
+    bottom:0;
+}
 snow {
     border-radius: 50%;
     background: white;
-    position: absolute;
+    position: fixed;
     animation: star linear infinite; 
     z-index: 100;
     @for $i from 1 through 70 {
@@ -194,6 +205,21 @@ nav {
     img {
         height: 100px;
     }
+
+    ul {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            font-size: calc(3vw + 10px);
+            color: white;
+            margin: 10px;
+        }
+    }
 }
 
 .logo-discord {
@@ -205,12 +231,30 @@ nav {
     margin:0;
 }
 
+div#main {
+    height: 100%;
+    overflow-y: scroll;
+    width:100%;
+    position: fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    z-index:4;
+}
+
 
     div.section {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         flex-direction: row;
+        height: 100%;
+        scroll-snap-align: start;
+
+        &.about {
+            background:linear-gradient(to right, rgb(129, 18, 18),rgb(189, 127, 41));
+        }
 
         &[data="podcast"] { 
             background: linear-gradient(to top, rgb(129, 18, 18),rgb(76, 67, 54));
@@ -354,72 +398,76 @@ nav {
 
             
 
-    div[data="contact"] {
-        background: rgb(87, 111, 197);
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        color:black;
-        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.527);
+    
 
-        .discord-wrap {
-            width: 310px;
-            border-radius: 10px;
-            background-color: #fff;
-            height: 500px;
+}
+
+.section.discord {
+    background: rgb(87, 111, 197);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color:black;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.527);
+
+    .discord-wrap {
+        width: 310px;
+        border-radius: 10px;
+        background-color: #fff;
+        height: 500px;
+        color: black;
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.212);
+        margin: 40px;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.212);
+        }
+
+        h1, p {
+            margin: 10px;
+            text-align: center;
             color: black;
-            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.212);
-            margin: 40px;
-
-            &:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.212);
-            }
-
-            h1, p {
-                margin: 10px;
-                text-align: center;
-                color: black;
-            }
-
-            h1 {
-                font-weight: 800;
-                font-size: 30px;
-                width: 300px;
-            }
-
-            p {
-                font-size: 20px
-            }
         }
 
         h1 {
-            margin: 50px;
-            color: white;
-            font-weight: 200;
-            font-size: 50px;
-            width: 500px;
+            font-weight: 800;
+            font-size: 30px;
+            width: 300px;
+        }
+
+        p {
+            font-size: 20px
         }
     }
 
-    .arrow-wrap {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: fit-content;
-        #goDown {
-            position: absolute;
-            z-index: 6;
-            bottom: 40px;
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg) scale(5);
-            border: solid rgb(255, 255, 255);
-            border-width: 0 1px 1px 0;
-            padding: 3px;
-            animation: arrow 4s infinite;
-        }
+    h1 {
+        margin: 50px;
+        color: white;
+        font-weight: 200;
+        font-size: 50px;
+        width: 500px;
+    }
+}
+
+
+.arrow-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    #goDown {
+        position: absolute;
+        z-index: 60;
+        bottom: 40px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg) scale(5);
+        border: solid rgb(255, 255, 255);
+        border-width: 0 1px 1px 0;
+        padding: 3px;
+        animation: arrow 4s infinite;
     }
 }
 
@@ -468,7 +516,7 @@ div.hero {
     background-size: cover;
     background-position: center;
     animation: heroload 1s;
-    height: 100%;
+    height: 100vh;
 }
 
 .nav-toggle {
@@ -531,12 +579,11 @@ footer {
         background-color: #333;
         position: fixed;
         bottom: 0; 
-        z-index: 3;
+        z-index: -5;
         right:0;
         left:0;
         padding: 20px;
         padding-top:30px;
-        display: none;
         div {
             display: flex;
             align-items: center;
@@ -622,12 +669,12 @@ footer {
     }
   }
   
-@media screen and (max-width: 500px) {
-    main .logo-about {
+@media screen and (max-width: 600px) {
+    div.section .logo-about {
         height: 200px;
     }
 
-    main .first-page, main .second-page, main .third-page, main .fourth-page {
+    div.section {
         flex-direction: column;
     }
 }

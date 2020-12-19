@@ -1,4 +1,4 @@
-let n = document.querySelector("main");
+let n = document.getElementById("main");
 let s = document.querySelector("nav");
 let r, t, c, g;
 t = document.querySelector(".nav-toggle");
@@ -13,12 +13,6 @@ g = document.getElementById('contactBtn');
 
 c = document.querySelector(".nav-mobile");
 
-let f = document.querySelector(".footer");
-
-function showFooter() {
-    f.style.display = 'block';
-}
-
 function nav() {
     if (c.style.width !== '100%') {
        c.style.width = '100%';
@@ -30,16 +24,17 @@ function nav() {
 var i;
 for (i = 0; i < 70; i++) {
     let snow = document.createElement('snow');
-    document.body.appendChild(snow);
+    document.getElementById('sky').appendChild(snow);
 }
 
-let scroll = window.scrollY;
+var a = n.scrollTop;
+var b = n.scrollHeight;
+var cc;
 
-if (window.scrollY)
-    
-setTimeout(function() {
-    showFooter();
-}, 2000)
+
+if (cc >= 1) {
+    document.getElementById('goDown').style.display = 'none';
+}
 
 
 t.addEventListener("click", function(e){
@@ -51,35 +46,3 @@ t.addEventListener("click", function(e){
 function urlhash(link) {
     window.location.hash = link;
 }
-
-
-setInterval(function(){
-    if (window.location.hash == '#merch') {
-    document.querySelector('#merchlink').classList.add('active');
-} else if (window.location.hash !== '#merch') {
-    document.querySelector('#merchlink').classList.remove('active');
-} 
-
-if (window.location.hash == '#about') {
-    document.getElementById('aboutlink').classList.add('active');
-} else if (window.location.hash !== '#about') {
-    document.querySelector('#aboutlink').classList.remove('active');
-}
-
-if (window.location.hash == '#podcast') {
-    document.getElementById('podcastlink').classList.add('active');
-} else if (window.location.hash !== '#podcast') {
-    document.querySelector('#podcastlink').classList.remove('active');
-}
-
-if (window.location.hash == '#home') {
-    document.getElementById('homelink').classList.add('active');
-} else if (window.location.hash !== '#home') {
-    document.querySelector('#homelink').classList.remove('active');
-}
-
-if (window.location.hash == '') {
-    document.getElementById('aboutlink').classList.remove('active');
-    document.querySelector('#merchlink').classList.remove('active');
-}
-},100)
