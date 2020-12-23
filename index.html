@@ -93,15 +93,15 @@
                
             </div>
             <div class="section scrollspy" id="merch">
-                <iframe id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" allowfullscreen="" height="550px" width="450px" src="https://merch.streamelements.com/stryker3k_jnr" style="overflow: auto;">
+                <iframe data-aos="flip-left" id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" allowfullscreen="" height="550px" width="450px" src="https://merch.streamelements.com/stryker3k_jnr" style="overflow: auto;">
                 </iframe>
-                <div class="merch-info-wrap">
+                <div class="merch-info-wrap" data-aos="fade-up">
                     <h1>Merch</h1>
                     <hr>
                     <p>I now have a merch store!! If you would like to check it out you can scroll though it on the left, or it can be found <a href="https://bit.ly/strykermerch" target="_blank">here</a>.</p>
                 </div>
             </div>
-            <div class="section discord scrollspy" id="contact-me" data="contact">
+            <div class="section discord" id="contact-me" data="contact">
                 <a href="https://discord.gg/bq43X4j" target="_blank" data-aos="zoom-in" class="discord-wrap">
                     <img class="logo-discord" src="logo.png">
                     <h1>Join the Stryker3K Jnr's Office Discord Server!</h1>
@@ -119,7 +119,7 @@
     <footer class="footer">
         <div>
             <p>Stryker3K Jnr</p>
-            <p>Website by <a href="https://pineapplerind.github.io" style="display: inline">PineappleRind</a></p>
+            <p>Website by <a href="https://pineapplerind.github.io" style="display: inline; color: white; text-decoration: underline;">PineappleRind</a></p>
         </div>
     </footer>
     <div id="overlay"></div>
@@ -130,7 +130,11 @@
     </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 700,
+            delay: 200,
+            mirror: true
+        });
     </script>
 </body>
 </html>
