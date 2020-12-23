@@ -64,14 +64,13 @@ h1.title {
 
 sky {
     position: fixed;
-    touch-action: none;
-    pointer-events: none;
     top:0;
     left:0;
     right:0;
     z-index:999;
     bottom:0;
 }
+
 snow {
     border-radius: 50%;
     background: white;
@@ -367,46 +366,47 @@ div#main {
         }
 
         &[data="contact"] {
-        background: rgb(87, 111, 197);
-        display: grid;
-        justify-content: space-evenly;
-        grid-template-columns: 2;
-        align-items: center;
-        color:black;
-        box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.527);
+            background: rgb(87, 111, 197);
+            display: grid;
+            justify-content: space-evenly;
+            grid-template-columns: 2;
+            align-items: center;
+            color:black;
+            box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.527);
 
-        .discord-wrap {
-            width: 310px;
-            border-radius: 10px;
-            background-color: #fff;
-            height: 500px;
-            color: black;
-            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.212);
-            margin: 40px;
-            grid-column-start: 1;
-            grid-column-end: 1;
-
-            &:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.212);
-            }
-
-            h1, p {
-                margin: 10px;
-                text-align: center;
+            .discord-wrap {
+                width: 310px;
+                border-radius: 10px;
+                background-color: #fff;
+                height: 500px;
                 color: black;
-            }
+                box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.212);
+                margin: 40px;
+                grid-column-start: 1;
+                grid-column-end: 1;
 
-            h1 {
-                font-weight: 800;
-                font-size: 30px;
-                width: 300px;
-            }
+                &:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 4px 20px 5px rgba(0, 0, 0, 0.212);
+                }
 
-            p {
-                font-size: 20px
-            }
-        } 
+                h1, p {
+                    margin: 10px;
+                    text-align: center;
+                    color: black;
+                }
+
+                h1 {
+                    font-weight: 800;
+                    font-size: 30px;
+                    width: 300px;
+                }
+
+                p {
+                    font-size: 20px
+                }
+            } 
+        }
     }
 
     div.section {
@@ -480,6 +480,7 @@ div#main {
                     }
                 }
             }
+        }
 
             .section.discord {
                 background: rgb(87, 111, 197);
@@ -655,6 +656,9 @@ div.hero {
   .section {
       height: 100%;
   }
+  .section.transparent {
+      height: 70px
+  }
   
 footer {
         height: 80px;
@@ -725,10 +729,6 @@ footer {
 @keyframes scroll {
     from {transform: translateX(-1170px);}
     to {transform: translateX(0%);}
-}
-
-@keyframes navline {
-    to {right: 0}
 }
 
 

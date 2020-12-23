@@ -24,7 +24,7 @@ function nav() {
 var i;
 for (i = 0; i < 70; i++) {
     let snow = document.createElement('snow');
-    document.getElementById('sky').appendChild(snow);
+    document.getElementById('add').appendChild(snow);
 }
 
 var a = n.scrollTop;
@@ -46,3 +46,12 @@ t.addEventListener("click", function(e){
 function urlhash(link) {
     window.location.hash = link;
 }
+
+$(document).ready(function(){
+    setTimeout(function(){
+       $('section').each(function(){
+          $(this).hide().fadeIn('500');
+       });
+    }, 1000);
+
+});  
