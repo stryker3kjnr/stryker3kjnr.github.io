@@ -460,12 +460,12 @@ footer div p {
 }
 
 /* tooltips */
-[data-tooltip] {
+.tooltip {
   position: relative;
   cursor: pointer;
 }
-[data-tooltip]:before,
-[data-tooltip]:after {
+.tooltip:before,
+.tooltip:after {
   line-height: 1;
   font-size: .9em;
   pointer-events: none;
@@ -474,13 +474,13 @@ footer div p {
   display: none;
   opacity: 0;
 }
-[data-tooltip]:before {
+.tooltip:before {
   content: "";
   border: 5px solid transparent;
   z-index: 100;
 }
-[data-tooltip]:after {
-  content: 'attr(data-tooltip)';
+.tooltip:after {
+  content: 'Donations are welcome but aren\'t expected. All donations go towards better stream gear and giveaways.';
   text-align: center;
   min-width: 3em;
   max-width: 21em;
@@ -493,8 +493,8 @@ footer div p {
   color: #FFFFFF;
   z-index: 99;
 }
-[data-tooltip]:hover:before,
-[data-tooltip]:hover:after {
+.tooltip:hover:before,
+.tooltip:hover:after {
   display: block;
   opacity: 1;
 }
@@ -536,7 +536,7 @@ footer div p {
 }
 
 .grid figure figcaption {
-    padding: 2em;
+
     color: #fff;
     text-transform: uppercase;
     font-size: 1.25em;
@@ -587,7 +587,7 @@ figure figcaption > div {
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 2em;
+    padding: 1em;
     width: 100%;
     height: 100%;
 }
