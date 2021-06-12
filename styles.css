@@ -173,6 +173,7 @@ div.section {
   align-items: center;
   flex-direction: row;
   background: linear-gradient(to top, #261281, #330b42);
+  padding:100px 10px;
 }
 .h1-wrap {
   background-color: #fff;
@@ -372,22 +373,12 @@ div.hero {
   opacity: 0;
 }
 
-.section {
-  height: 100%;
-}
-
-.section.transparent {
-  height: 70px;
-  background: transparent;
-  pointer-events: none;
-}
-
 footer {
   height: 80px;
   background-color: #333;
-  position: absolute;
+
   bottom: 0;
-  z-index: -5;
+  z-index: 1;
   right: 0;
   left: 0;
   padding: 20px;
