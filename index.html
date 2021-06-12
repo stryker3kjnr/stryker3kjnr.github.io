@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1">
@@ -10,16 +11,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav>
         <div class="left">
             <a href="website.html">
-                <img class="logo" src="logo.png">
+                <img class="logo" src="imgs/logo.png">
             </a>
         </div>
         <div>
             <a href="#home" class="nav-links" onclick="window.location.hash = 'home';">Home</a>
             <a href="#about" class="nav-links" onclick="window.location.hash = 'about';">About</a>
+            <a href="#podcast" class="nav-links" onclick="window.location.hash = 'experience';">Experience</a>
             <a href="#podcast" class="nav-links" onclick="window.location.hash = 'podcast';">Podcast</a>
             <a href="https://merch.streamelements.com/stryker3k_jnr" class="nav-links">Merch</a>
             <a href="https://streamelements.com/stryker3k_jnr/tip" id="donate" class="nav-links tooltip">Donate</a>
@@ -30,92 +33,110 @@
     <div class="nav-collapsed-open">
         <div class="nav-toggle">
             <div class="nav-toggle-bar"></div>
-          </div>
+        </div>
     </div>
-    <div class="nav-mobile">
-        <img class="logo" src="logo.png">
-        <ul id="navList">
-            <a href="#home" onclick="closeNav(event); window.location.hash = 'home';">Home</a>
-            <a href="#about" onclick="closeNav(event); window.location.hash = 'about';">About</a>
-            <a href="https://merch.streamelements.com/stryker3k_jnr">Merch</a>
-            <a href="https://streamelements.com/stryker3k_jnr/tip">Donate</a>
-            <a href="#podcast" onclick="closeNav(event); window.location.hash = 'podcast';">Podcast</a>
-            <a href="#contact-me" onclick="closeNav(event); window.location.hash = 'contact-me';">Contact</a>
-        </ul>
+    <section class="section" id="home">
+        <div class="hero">
+            <h1 class="title">Stryker3K Jnr</h1>
+        </div>
+        <div class="arrow-wrap">
+            <p id="goDown"></p>
+        </div>
+    </section>
+    <div class="section about scrollspy" id="about">
+        <div class="wrap-box" data-aos="fade-right">
+            <h1>About Me</h1>
+            <hr>
+            <p>Hey, my name is Attley!
+                I'm known as Stryker3K Jnr online and Stryker3K_Jnr on Twitch.
+                I am a very supportive streamer and gamer.
+                I like to play and stream Fortnite, Rocket League, Minecraft and many more games.</p>
+        </div>
+        <div data-aos="fade-left" class="logo-wrap">
+            <img src="imgs/logo.png" class="logo-about">
+        </div>
     </div>
-        <section class="section scrollspy" id="home">
-            <div class="hero">
-                <h1 class="title">Stryker3K Jnr</h1>
-            </div>
-            <div class="arrow-wrap">
-                <p id="goDown"></p>
-            </div>
-        </section>
-        <div class="section about scrollspy" id="about">
-            <div class="h1-wrap" data-aos="fade-right">
-                <h1>About Me</h1>
+    <div class="section" id="experience">
+        <div class="grid">
+            <figure>
+                <!-- <img src="https://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12" />-->
+                <figcaption>
+                    <div>
+                        <h2>AtlasMC</h2>
+                        <p>Discord Developer / Helper</p>
+                    </div>
+                </figcaption>
+            </figure>
+            
+            <figure>
+                <!--<img src="https://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12" />-->
+                <figcaption>
+                    <div>
+                        <h2>WinterFallMC</h2>
+                        <p>Manager</p>
+                    </div>
+                </figcaption>
+            </figure>
+            
+            <figure>
+                <!--<img src="https://tympanus.net/Development/HoverEffectIdeas/img/12.jpg" alt="img12" />-->
+                <figcaption>
+                    <div>
+                        <h2>GeoGlobeCraftMC</h2>
+                        <p>Discord Developer / Helper</p>
+                    </div>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="section" id="podcast">
+        <div class="flex">
+            <div class="wrap-box" data-aos="fade-right">
+                <h1>MKAU Podcast</h1>
                 <hr>
-                <p>Hey, my name is Attley! 
-                    I'm known as Stryker3K Jnr online and Stryker3K_Jnr on Twitch. 
-                    I am a very supportive streamer and gamer. 
-                    I like to play and stream Fortnite, Rocket League, Minecraft and many more games. 
-                    I'm also a part of a few stream teams: MKAU Gaming, ChannelZero, House of 1000 and The Blue Line Army.</p>
+                <p>I have been a part of a podcast lately called The MKAU Show. I have been really enjoying it with some of the MKAU people. If you want to check it out, the links are below. Join us as we dive into the world of video games, news, reviews, interviews, and general ramblings on from the team here at MKAU. </p>
             </div>
-            <div data-aos="fade-left" class="js-fade-animation logo-wrap">
-                <img src="logo.png" class="logo-about">
+            <div class="logo-wrap" data-aos="fade-left">
+                <img src="imgs/mkau.png" class="logo-about">
             </div>
         </div>
-            <div class="section scrollspy" id="podcast">
-                <div class="flex">
-                    <div class="h1-wrap" data-aos="fade-right">
-                        <h1>MKAU Podcast</h1>
-                        <hr>
-                        <p>I have been a part of a podcast lately called The MKAU Show. I have been really enjoying it with some of the MKAU people. If you want to check it out, the links are below.  Join us as we dive into the world of video games, news, reviews, interviews, and general ramblings on from the team here at MKAU. </p>
-                    </div>
-                    <div class="logo-wrap" data-aos="fade-left">
-                        <img src="mkau.png" class="logo-about">
-                    </div>
-                </div>
-    
-                <div class="podcast-links" data-aos="fade-up">
-                    <ul>
-                        <li onclick="link('https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy9iMWU4YjNjL3BvZGNhc3QvcnNz')">Google Podcast</li>
-                        <li onclick="link('https://open.spotify.com/show/39hs5E75QWG4P6BUQbF2IR')">Spotify</li>
-                        <li onclick="link('https://www.breaker.audio/the-mkau-show')">Breaker</li>
-                        <li onclick="link('https://pca.st/Bk1F')">Pocket Podcasts</li>
-                        <li onclick="link('https://radiopublic.com/the-mkau-show-6V500E')">Radio Public</li>
-                        <li onclick="link('https://anchor.fm/mkau-gaming')">Anchor</li>
-                        <li onclick="link('https://www.stitcher.com/show/mkau-gaming-podcast')">Stitcher</li>
-                        <li onclick="link('https://podcasts.apple.com/us/podcast/the-mkau-show/id1462646861?ign-mpt=uo%3D4')">iTunes</li>
-                        <li onclick="link('https://www.youtube.com/user/mkaugaming')">YouTube</li>
-                    </ul>
-                </div>
-               
-            </div>
-            <div class="section scrollspy" id="merch">
-                <iframe data-aos="flip-left" id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" allowfullscreen="" height="550px" width="450px" src="https://merch.streamelements.com/stryker3k_jnr" style="overflow: auto;">
-                </iframe>
-                <div class="merch-info-wrap" data-aos="fade-up">
-                    <h1>Merch</h1>
-                    <hr>
-                    <p>I now have a merch store!! If you would like to check it out you can scroll though it on the left, or it can be found <a href="https://bit.ly/strykermerch" target="_blank">here</a>.</p>
-                </div>
-            </div>
-            <div class="section discord" id="contact-me" data="contact">
-                <a href="https://discord.gg/bq43X4j" target="_blank" data-aos="zoom-in" class="discord-wrap">
-                    <img class="logo-discord" src="logo.png">
-                    <h1>Join the Stryker3K Jnr's Office Discord Server!</h1>
-                    <hr>
-                    <p>Check out the Stryker3K Jnr's Office community on Discord - hang out with other members and enjoy free voice and text chat.</p>
-                </a>
-                <h1 data-aos="fade-left">
-                    Come join the Discord Server to meet new friends and find out a bit more about me! 
-                </h1>
-            </div>
-            <div class="section transparent"></div>
-    <div id="sky">
-        <div id="add"></div>
+
+        <div class="podcast-links" data-aos="fade-up">
+            <ul>
+                <li onclick="link('https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy9iMWU4YjNjL3BvZGNhc3QvcnNz')">Google Podcast</li>
+                <li onclick="link('https://open.spotify.com/show/39hs5E75QWG4P6BUQbF2IR')">Spotify</li>
+                <li onclick="link('https://www.breaker.audio/the-mkau-show')">Breaker</li>
+                <li onclick="link('https://pca.st/Bk1F')">Pocket Podcasts</li>
+                <li onclick="link('https://radiopublic.com/the-mkau-show-6V500E')">Radio Public</li>
+                <li onclick="link('https://anchor.fm/mkau-gaming')">Anchor</li>
+                <li onclick="link('https://www.stitcher.com/show/mkau-gaming-podcast')">Stitcher</li>
+                <li onclick="link('https://podcasts.apple.com/us/podcast/the-mkau-show/id1462646861?ign-mpt=uo%3D4')">iTunes</li>
+                <li onclick="link('https://www.youtube.com/user/mkaugaming')">YouTube</li>
+            </ul>
+        </div>
+
     </div>
+    <div class="section scrollspy" id="merch">
+        <iframe data-aos="flip-left" id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" allowfullscreen="" height="550px" width="450px" src="https://merch.streamelements.com/stryker3k_jnr" style="overflow: auto;">
+        </iframe>
+        <div class="wrap-box" data-aos="fade-up">
+            <h1>Merch</h1>
+            <hr>
+            <p>I now have a merch store!! If you would like to check it out you can scroll though it on the left, or it can be found <a href="https://bit.ly/strykermerch" target="_blank">here</a>.</p>
+        </div>
+    </div>
+    <div class="section discord" id="contact-me" data="contact">
+        <a href="https://discord.gg/bq43X4j" target="_blank" data-aos="zoom-in" class="wrap-box">
+            <img class="logo-discord" src="logo.png">
+            <h1>Join the Stryker3K Jnr's Office Discord Server!</h1>
+            <hr>
+            <p>Check out the Stryker3K Jnr's Office community on Discord - hang out with other members and enjoy free voice and text chat.</p>
+        </a>
+        <h1 data-aos="fade-left">
+            Come join the Discord Server to meet new friends and find out a bit more about me!
+        </h1>
+    </div>
+    <div class="section transparent"></div>
     <footer class="footer">
         <div>
             <p>Stryker3K Jnr</p>
@@ -137,4 +158,5 @@
         });
     </script>
 </body>
+
 </html>
