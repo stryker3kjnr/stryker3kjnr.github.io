@@ -2,237 +2,29 @@
   box-sizing: border-box;
   margin: 0;
   animation-duration: 1s;
+  color: rgb(233, 233, 240);
 }
-
-html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  font-weight: 200;
-  font-family: -apple-system, system-ui, "Arial", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-  scroll-behavior: smooth;
-  width: 100%;
+html,body {
+  height:100vh;
+  width:100vw;
 }
-
-body {
-  height: 100%;
-  width: 100%;
-  background-color: black;
-  background-image: url("imgs/hero.png");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-img {
-    height:400px;
-}
-a {
-  color: blue;
-  position: relative;
-  margin-bottom: 2px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-h1.title {
-  font-size: 100px;
-  animation: h1load 0.5s;
-  margin: 0;
-  text-shadow: 0 0 10px black;
-  padding: 10px;
-}
-
-nav {
-    position: fixed;
-    top:0;
-    left: 0;
-    right: 0;
-    padding: 5px;
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-    z-index:10;
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-nav img {
-    height:80px;
-}
-nav a {
-    color: white;
-    padding:20px;
-    transition: 0.2s;
-}
-nav a:hover {
-    opacity:0.7;
-}
-.nav-mobile {
-  position: fixed;
-  width: 0%;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.959);
-  z-index: 10;
-  transition: 1s;
-  overflow-x: hidden;
-  display: none;
-}
-.nav-mobile div {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 50px;
-}
-.nav-mobile img {
-  height: 80px;
-  margin: 0;
-  top: 30px;
-  left: 30px;
-  position: absolute;
-}
-.nav-mobile ul {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.nav-mobile ul a {
-  font-size: calc(3vw + 10px);
-  color: white;
-  margin: 10px;
-}
-.logo-discord {
-  background: #343434;
-  width: 310px;
-  position: relative;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  margin: 0;
-}
-
-#podcast {
-  background: linear-gradient(to top, #811212, #4c4336);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-#podcast div.flex {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  height: 80%;
-  position: relative;
-}
-#podcast div.podcast-links {
-  margin-bottom: 130px;
-}
-#podcast div.podcast-links ul {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  list-style-type: none;
-  position: relative;
-  flex-wrap: wrap;
-}
-#podcast div.podcast-links ul li {
-  padding: 10px;
-  background: rgba(10,130,240);
-  color: black;
-  margin: 4px;
-  border-radius:5px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: calc(10px + 0.5vw);
-  position: relative;
-  color:white;
-}
-#podcast div.podcast-links ul li:hover {
-  background: rgba(10,110,220)
+div.section#home {
+  background: url('wave-haikei.svg');
+  background-size:cover;
 }
 div.section {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-direction: row;
-  background: linear-gradient(to top, #261281, #330b42);
+  flex-direction: column;
+  background: #0c0d11;
   padding:100px 10px;
+  width:100vw;
+  margin:0;
+  border-bottom: 1px solid #333;
 }
-.h1-wrap {
-  background-color: #fff;
-  width: 300px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.233);
-}
-.h1-wrap h1 {
-  color: black;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  font-size: 45px;
-}
-.h1-wrap p {
-  color: black;
-  margin: 20px;
-  text-align: center;
-}
-
 .logo-wrap .logo {
   height: 200px;
-  transform: scale(2);
-}
-
-.wrap-box {
-  width: 30%;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #fff;
-
-}
-
-.wrap-box h1 {
-  color: black;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  font-size: 45px;
-}
-.wrap-box p {
-  color: black;
-  margin: 20px;
-  text-align: center;
-  font-size: 20px;
-}
-.wrap-box p a {
-  color: blue;
-  position: relative;
-  margin-bottom: 2px;
-}
-.wrap-box p a:hover {
-  opacity: 0.9;
-  background: linear-gradient(#008bdb, #7c00ad);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 20px;
 }
 
 .section.discord {
@@ -242,36 +34,6 @@ div.section {
   align-items: center;
   color: black;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.527);
-}
-.section#discord .wrap-box {
-  padding:0;
-  transition: 0.2s;
-}
-
-.section#discord .wrap-box img {
-    height:50%;
-    width:100%;
-    margin:0;
-}
-.section#contact-me .wrap-box h1,
-.section#contact-me .wrap-box p {
-  margin: 10px;
-  text-align: center;
-  color: black;
-  font-size:20px;
-}
-#contact-me .wrap-box h1 {
-  font-weight: 800;
-  font-size: 30px;
-  width: 300px;
-  margin:0;
-}
-#contact-me h1 {
-  margin: 50px;
-  color: white;
-  font-weight: 200;
-  font-size: 50px;
-  width: 500px;
 }
 
 .arrow-wrap {
@@ -300,77 +62,6 @@ div.hero {
   align-items: center;
   justify-content: center;
   height: 100vh;
-}
-
-.nav-toggle {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  height: 2rem;
-  position: fixed;
-  width: 3.6rem;
-  z-index: 14;
-  top: 30px;
-  right: 30px;
-  display: none;
-}
-
-.nav-toggle .nav-toggle-bar,
-.nav-toggle .nav-toggle-bar::after,
-.nav-toggle .nav-toggle-bar::before {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  background: white;
-  content: "";
-  height: 0.4rem;
-  width: 100%;
-  margin: 0;
-  z-index: 14;
-}
-
-.nav-toggle .nav-toggle-bar {
-  margin-top: 0;
-}
-
-.nav-toggle .nav-toggle-bar::after {
-  margin-top: 0.9rem;
-}
-
-.nav-toggle .nav-toggle-bar::before {
-  margin-top: -0.9rem;
-}
-
-.nav-toggle.expanded .nav-toggle-bar {
-  background: transparent;
-}
-
-.nav-toggle.expanded .nav-toggle-bar::after,
-.nav-toggle.expanded .nav-toggle-bar::before {
-  background: white;
-  margin-top: 0;
-  z-index: 14;
-  margin: 0;
-}
-
-#overlay {
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  position: fixed;
-  z-index: 13;
-  background: rgba(0, 0, 0, 0.374);
-  display: none;
-  opacity: 0;
 }
 
 footer {
