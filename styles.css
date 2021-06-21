@@ -8,15 +8,15 @@ html,body {
   height:100vh;
   width:100vw;
 }
-div.section#home {
-  background: url('wave-haikei.svg');
+section.section#home {
   background-size:cover;
+  height:80vh;
 }
-div.section {
-  display: flex;
+.section{  display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column;}
+.section:not(#home) {
   background: #0c0d11;
   padding:100px 10px;
   width:100vw;
@@ -27,35 +27,31 @@ div.section {
   height: 200px;
 }
 
-.section.discord {
-  background: #576fc5;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  color: black;
-  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.527);
-}
-
 .arrow-wrap {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 100%;
+  transform:translateY(-50px);
   height: fit-content;
 }
-.arrow-wrap #goDown {
-  position: absolute;
-  z-index: 60;
-  bottom: 130px;
+p.arrow {
   transform: rotate(45deg);
-  -webkit-transform: rotate(45deg) scale(5);
+  -webkit-transform: rotate(45deg);
   border: solid white;
   border-width: 0 1px 1px 0;
-  padding: 3px;
-  animation: arrow 4s infinite;
+  padding: 5px;
+  filter:drop-shadow(0 0 5px black)
 }
-
+#goDown {
+  animation: arrow 4s infinite;
+  z-index: 60;
+  bottom: 130px;
+  position: absolute;
+  padding: 3px;
+  transform:scale(4) rotate(45deg)
+}
 div.hero {
   display: flex;
   flex-direction: column;
@@ -66,7 +62,7 @@ div.hero {
 
 footer {
   height: 80px;
-  background-color: #333;
+  background-color: rgb(15, 15, 16);
 
   bottom: 0;
   z-index: 1;
@@ -103,44 +99,6 @@ footer div p {
     bottom: 140px;
   }
 }
-
-@keyframes heroload {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  div.section .logo-about {
-    height: 200px;
-  }
-
-  div.section {
-    flex-direction: column;
-  }
-  div.section div {width:80%}
-
-  nav {
-    display: none;
-  }
-
-  .nav-toggle {
-    display: block;
-    animation: navload 1s;
-  }
-
-  .nav-mobile {
-    display: block;
-  }
-
-  main .logo-about {
-    height: 300px;
-  }
-}
-
 /* tooltips */
 .tooltip {
   position: relative;
@@ -166,9 +124,6 @@ footer div p {
   text-align: center;
   min-width: 3em;
   max-width: 21em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   padding: 12px 12px;
   border-radius: 3px;
   background: #4621FF;

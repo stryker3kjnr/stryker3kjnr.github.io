@@ -50,11 +50,9 @@
         font-weight: 600;
       }
       h1.title {
-        font-size: 100px;
-        animation: h1load 0.5s;
+        font-size: 80px;
         margin: 0;
         text-shadow: 0 0 10px black;
-        padding: 10px;
       }
     </style>
     <style name="Wrap boxes">
@@ -79,6 +77,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        transition: 0.2s;
       }
       nav img {
         height:80px;
@@ -89,8 +88,47 @@
         transition: 0.2s;
       }
       nav a:hover {
-        opacity:0.7;
+        text-decoration: underline;
       }
+      nav #mobileOpen {
+        display: none;
+        font-size:30px;
+      }
+
+
+@media only screen and (max-width: 900px) {
+  div.section {
+    flex-direction: column;
+  }
+  div.section div {width:80%}
+
+  nav  {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    height:100px;
+    overflow:hidden;
+    padding:10px;
+    padding-bottom:20px;
+  }
+  nav a {
+    padding:3px;
+    margin:5px;
+  }
+  nav.open {
+    height:fit-content;
+    overflow:visible
+  }
+  .left {
+    display:flex;
+    flex-direction:row;
+    align-items:center
+  }
+  #mobileOpen{
+    display: block !important;
+  } 
+}
+
     </style>
     <style name="Podcast">
       #podcast {
@@ -151,6 +189,10 @@
     max-width: 1000px;
     list-style: none;
     text-align: center;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-wrap:wrap;
 }
 
 /* Common style */
@@ -160,7 +202,9 @@
     overflow: hidden;
     max-height: 150px;
     height: 150px;
-    width:460px;
+    max-width:460px;
+    min-width:250px;
+    width:400px;
     text-align: center;
     cursor: pointer;
     background: rgba(255,255,255,0.3);
@@ -245,7 +289,7 @@ figure p {
     color: rgba(255,255,255,1);
     opacity: 0;
     font-weight:600;
-    font-size:30px;
+    font-size:20px;
     transition-duration: 0.35s;
 }
 
@@ -269,6 +313,41 @@ figure:hover h2 {
 }
 
     </style>
+    <style name="Discord">
+      .section.discord{
+        flex-direction: row;
+      }
+      .section.discord h1 {
+        font-size:30px;
+        width:50%;
+      }
+      .section.discord .wrap-box {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .section.discord .wrap-box h1 {
+        width:100%;
+      }
+      .section.discord .wrap-box hr {
+        width:100%;
+      }
+      .discord-button {
+        background: rgb(84, 47, 232);
+        width:100%;
+        padding:10px;
+        margin-top:10px;
+        border-radius:4px;
+        border:0;
+        transition:0.2s;
+      }
+      .discord-button:hover {
+        background: rgb(80, 40, 221);
+        opacity:0.9;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2)
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -276,6 +355,8 @@ figure:hover h2 {
         <a href="website.html">
           <img class="logo" src="imgs/logo.png">
         </a>
+        <p id="mobileOpen" class="arrow">
+        </p>
       </div>
       <div>
         <a href="#home" class="nav-links" onclick="window.location.hash = 'home';">Home
@@ -302,13 +383,13 @@ figure:hover h2 {
         </h1>
       </div>
       <div class="arrow-wrap">
-        <p id="goDown">
+        <p id="goDown" class="arrow">
         </p>
       </div>
-      <svg id="visual" style="position:absolute;top:0;left:0;right:0;width:100vw;height:100vh;transform:translateY(5px)" preserveAspectRatio="none" viewBox="0 0 900 600"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 491L37.5 498.3C75 505.7 150 520.3 225 527.7C300 535 375 535 450 524.7C525 514.3 600 493.7 675 488C750 482.3 825 491.7 862.5 496.3L900 501L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z" fill="#0c0d11" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+      <svg id="visual" style="position:absolute;top:0;left:0;right:0;width:100vw;height:80vh;transform:translateY(5px)" preserveAspectRatio="none" viewBox="0 0 900 600"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 491L37.5 498.3C75 505.7 150 520.3 225 527.7C300 535 375 535 450 524.7C525 514.3 600 493.7 675 488C750 482.3 825 491.7 862.5 496.3L900 501L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z" fill="#0c0d11" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
     </section>
     <div class="section about" id="about">
-      <div class="wrap-box" data-aos="fade-right">
+      <div class="wrap-box">
         <div style="display:flex;flex-direction:column">
             <img src="imgs/logo.png" class="logo-about">
           <h1>About Me
@@ -431,7 +512,7 @@ figure:hover h2 {
     </div>
     <div class="section" id="podcast">
       <div class="flex">
-        <div class="wrap-box" style="display:flex;flex-direction:column" data-aos="fade-right">
+        <div class="wrap-box" style="display:flex;flex-direction:column">
             <img src="imgs/mkau.png" class="logo-about">
             <h1>MKAU Podcast
           </h1>
@@ -440,7 +521,7 @@ figure:hover h2 {
           </p>
         </div>
       </div>
-      <div class="podcast-links" data-aos="fade-up">
+      <div class="podcast-links" >
         <ul>
           <li onclick="link('https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy9iMWU4YjNjL3BvZGNhc3QvcnNz')">Google Podcast
           </li>
@@ -464,28 +545,29 @@ figure:hover h2 {
       </div>
     </div>
     <div class="section scrollspy" id="merch">
-      <iframe data-aos="flip-left" id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" allowfullscreen="" height="550px" width="450px" src="https://merch.streamelements.com/stryker3k_jnr" style="overflow: auto;">
-      </iframe>
-      <div class="wrap-box" data-aos="fade-up">
+      <div class="wrap-box">
         <h1>Merch
         </h1>
         <hr>
-        <p>I now have a merch store!! If you would like to check it out you can scroll though it on the left, or it can be found 
+        <p>I now have a merch store!! If you would like to check it out you can scroll though it below, or it can be found 
           <a href="https://bit.ly/strykermerch" target="_blank">here
           </a>.
         </p>
       </div>
+      <iframe id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" allowfullscreen="" height="550px" width="450px" src="https://merch.streamelements.com/stryker3k_jnr" style="overflow: auto;">
+      </iframe>
     </div>
     <div class="section discord" id="contact-me" data="contact">
-      <a href="https://discord.gg/bq43X4j" target="_blank" data-aos="zoom-in" class="wrap-box">
-        <img class="logo-discord" src="logo.png">
+      <a href="https://discord.gg/bq43X4j" target="_blank" class="wrap-box">
+        <img class="logo-discord" src="imgs/logo.png">
         <h1>Join the Stryker3K Jnr's Office Discord Server!
         </h1>
         <hr>
         <p>Check out the Stryker3K Jnr's Office community on Discord - hang out with other members and enjoy free voice and text chat.
         </p>
+        <button class="discord-button">Join</button>
       </a>
-      <h1 data-aos="fade-left">
+      <h1>
         Come join the Discord Server to meet new friends and find out a bit more about me!
       </h1>
     </div>
@@ -499,23 +581,11 @@ figure:hover h2 {
         </p>
       </div>
     </footer>
-    <div id="overlay">
-    </div>
     <script src="app.js">
     </script>
     <script type="text/javascript">
       let credits = "Made by PineappleRind 2020"
       console.log(credits)
-    </script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js">
-    </script>
-    <script>
-      AOS.init({
-        duration: 700,
-        delay: 200,
-        mirror: true
-      }
-              );
     </script>
   </body>
 </html>

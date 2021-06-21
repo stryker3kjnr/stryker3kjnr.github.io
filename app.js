@@ -29,6 +29,15 @@ function link(t) {
   v.focus();
 }
 
-if (window.location.hash === 'about') {
-  document.getElementsByClassName('nav-links')[1].classList.add('active');
+var nav = false
+var nave =document.querySelector('nav')
+document.getElementById('mobileOpen').onclick = navToggle
+function navToggle() {
+  if (nav == true) {
+    nav = false
+    nave.classList.remove('open')
+  } else {
+    nav = true
+    nave.classList.add('open')
+  }
 }
