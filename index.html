@@ -56,7 +56,7 @@
       }
     </style>
     <style name="Wrap boxes">
-        .wrap-box, .vouch-box {display: flex;flex-direction:column;align-items:center;justify-content:center;width:40%;padding:20px;border-radius:20px/17px;background:rgba(255,255,255,0.1)}
+        .wrap-box, .vouch-box {backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);display: flex;flex-direction:column;align-items:center;justify-content:center;width:40%;padding:20px;border-radius:20px/17px;background:rgba(255,255,255,0.1)}
 .wrap-box div {display:flex;flex-direction:column;align-items:center;text-align:left;}
 .wrap-box div hr, .wrap-box hr {width:80%;opacity:0.6;margin:5px}
 .wrap-box img {height:100px;}
@@ -70,8 +70,8 @@
         right: 0;
         padding: 5px;
         background: rgba(0,0,0,0.5);
-        backdrop-filter: blur(7px);
-        -webkit-backdrop-filter: blur(7px);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
         z-index:10;
         display: flex;
         flex-direction: row;
@@ -406,6 +406,7 @@ figure:hover h2 {
     <div class="section" id="experience">
       <h1>Experience
       </h1>
+      <g xmlns="http://www.w3.org/2000/svg" transform="translate(450.5710700097306 327.07679930656207)"><path d="M186.1 -181.6C230.8 -141.4 249.4 -70.7 248.1 -1.3C246.8 68.1 225.6 136.2 180.9 157.9C136.2 179.6 68.1 154.8 1.9 152.9C-64.3 151 -128.7 172 -178.4 150.4C-228 128.7 -263 64.3 -244.1 18.9C-225.2 -26.5 -152.4 -53 -102.7 -93.2C-53 -133.4 -26.5 -187.2 22.1 -209.3C70.7 -231.4 141.4 -221.8 186.1 -181.6" fill="#222228"/></g>
       <div class="grid">
         <figure>
           <figcaption>
@@ -485,6 +486,7 @@ figure:hover h2 {
       </div>
     </div>
     <div class="section" id="vouches">
+      <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;height:100vh;width:100vw;transform:scale(0.7) translateY(-200px);z-index:-1;"xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 900 600" preserveAspectRatio="none" version="1.1"><g transform="translate(447.3544530593134 305.8779485274853)"><path d="M95.9 -90.9C138.7 -53 197.9 -26.5 216.8 18.9C235.7 64.3 214.4 128.7 171.5 152.9C128.7 177 64.3 161 -3.2 164.2C-70.7 167.4 -141.4 189.8 -180.1 165.6C-218.8 141.4 -225.4 70.7 -212.3 13.1C-199.2 -44.5 -166.4 -89.1 -127.8 -126.9C-89.1 -164.8 -44.5 -195.9 -9 -186.9C26.5 -177.9 53 -128.7 95.9 -90.9" fill="#222228"/></g></svg>
         <h1 style="margin-bottom: 10px">Vouches</h1>
         <div style="display:flex;flex-wrap:wrap; align-items:center;justify-content:space-evenly;">
             <div class="wrap-box">
