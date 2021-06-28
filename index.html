@@ -7,7 +7,14 @@
     </title>
     <link rel="stylesheet" href="styles.css">
     <style name="Base">
-      html {
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+html {
         height: 100%;
         width: 100%;
         margin: 0;
@@ -22,7 +29,8 @@
         height: 100%;
         width: 100%;
         background-color: black;
-        animation:opacity 1s;
+        -webkit-animation:opacity 1s;
+                animation:opacity 1s;
         margin: 0;
         overflow-x: hidden;
         overflow-y: scroll;
@@ -50,6 +58,8 @@ footer {
   background-color: rgba(15, 15, 16, 1);
 position:fixed;
   bottom: 0;
+  -webkit-transition:0.5s;
+  -o-transition:0.5s;
   transition:0.5s;
   z-index: -1;
   height:60px;
@@ -57,12 +67,20 @@ position:fixed;
   left: 0;
   padding: 10px;
   opacity:0;
-  transform:translateY(70px)
+  -webkit-transform:translateY(70px);
+      -ms-transform:translateY(70px);
+          transform:translateY(70px)
 }
 footer div,footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 footer div p {
   font-size: 20px;
@@ -72,14 +90,21 @@ footer div p {
 
     </style>
     <style name="Wrap boxes">
-        .wrap-box, .vouch-box {backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);display: flex;flex-direction:column;align-items:center;justify-content:center;width:40%;padding:20px;border-radius:20px/17px;background:rgba(255,255,255,0.1)}
-.wrap-box div {display:flex;flex-direction:column;align-items:center;text-align:left;}
+        .wrap-box, .vouch-box {backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:40%;padding:20px;border-radius:20px/17px;background:rgba(255,255,255,0.1)}
+.wrap-box div {display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:left;}
 .wrap-box div hr, .wrap-box hr {width:80%;opacity:0.6;margin:5px}
 .wrap-box img {height:100px;}
 .wrap-box div p {width:70%;text-align:center}
     </style>
     <style name="Nav">
-      nav {
+      /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+nav {
         position: fixed;
         top:0;
         left: 0;
@@ -89,10 +114,21 @@ footer div p {
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
         z-index:10;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-transition: 0.2s;
+        -o-transition: 0.2s;
         transition: 0.2s;
       }
       nav img {
@@ -101,6 +137,8 @@ footer div p {
       nav a {
         color: white;
         padding:20px;
+        -webkit-transition: 0.2s;
+        -o-transition: 0.2s;
         transition: 0.2s;
       }
       nav a:hover {
@@ -112,18 +150,41 @@ footer div p {
       }
     </style>
     <style name="Podcast">
-      #podcast {
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+#podcast {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
       }
       #podcast div.flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         width: 100%;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         height: 80%;
         position: relative;
       }
@@ -131,13 +192,23 @@ footer div p {
         margin-bottom: 130px;
       }
       #podcast div.podcast-links ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
         list-style-type: none;
         position: relative;
-        flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
         margin-top: 10px;
       }
       #podcast div.podcast-links ul li {
@@ -145,6 +216,8 @@ footer div p {
         background: rgba(42, 43, 48);
         color: black;
         cursor: pointer;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
         transition: 0.3s;
         font-size: calc(10px + 0.5vw);
         position: relative;
@@ -153,15 +226,26 @@ footer div p {
         border-radius:5px;
       }
       #podcast div.podcast-links ul li:hover {
-       transform:scale(1.1);
+       -webkit-transform:scale(1.1);
+           -ms-transform:scale(1.1);
+               transform:scale(1.1);
       }
     </style>
     <style name="Experience">
+      /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
 
 /************ EXPERIENCE PAGE ************/
 
 .section#experience {
-    flex-direction:column;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
 }
 .grid {
     position: relative;
@@ -170,10 +254,17 @@ footer div p {
     max-width: 1000px;
     list-style: none;
     text-align: center;
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    align-items:center;
-    justify-content: center;
-    flex-wrap:wrap;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap:wrap;
+        flex-wrap:wrap;
 }
 
 /* Common style */
@@ -192,10 +283,19 @@ footer div p {
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-radius: 30px;
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content:center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
     margin: 5px;
 }
 
@@ -224,7 +324,9 @@ footer div p {
 .grid figure img {
     position: relative;
     display: block;
-    transform:scale(1);
+    -webkit-transform:scale(1);
+        -ms-transform:scale(1);
+            transform:scale(1);
     opacity: 0.8;
     /*filter: blur(24px)*/
 }
@@ -240,7 +342,10 @@ footer div p {
 figure img {
     opacity: 0.7;
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, -webkit-transform 0.35s;
+    -o-transition: opacity 0.35s, transform 0.35s;
     transition: opacity 0.35s, transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s, -webkit-transform 0.35s;
 }
 
 figure figcaption {
@@ -265,6 +370,8 @@ figure p {
 
 figure h2 {
     -webkit-transition: -webkit-transform 0.35s;
+    -webkit-transition: 0.35s;
+    -o-transition: 0.35s;
     transition: 0.35s;
 }
 
@@ -273,7 +380,9 @@ figure p {
     opacity: 0;
     font-weight:600;
     font-size:20px;
-    transition-duration: 0.35s;
+    -webkit-transition-duration: 0.35s;
+         -o-transition-duration: 0.35s;
+            transition-duration: 0.35s;
 }
 
 figure:hover img,
@@ -287,28 +396,50 @@ figure:hover p {
     transform: translate3d(0,0,0);
 }
 figure:hover img {
-    transform: scale(0.8)
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8)
 }
 
 figure:hover h2 {
     opacity:0.5;
     text-shadow: 0 0 10px black;
 }
-
     </style>
     <style name="Discord">
-      .section.discord{
-        flex-direction: row;
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+.section.discord{
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
       }
       .section.discord h1 {
         font-size:30px;
         width:50%;
       }
       .section.discord .wrap-box {
+        display:-webkit-box;
+        display:-ms-flexbox;
         display:flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-transition:0.1s;
+        -o-transition:0.1s;
         transition:0.1s;
       }
       .section.discord .wrap-box h1 {
@@ -327,16 +458,26 @@ figure:hover h2 {
         margin-top:10px;
         border-radius:6px;
         border:0;
+        -webkit-transition:0.2s;
+        -o-transition:0.2s;
         transition:0.2s;
       }
       .discord-button:hover {
         background: rgb(80, 40, 221);
         opacity:0.9;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2)
+        -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2)
       }
     </style>
     <style name="Animations">
-      @keyframes arrow {
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@-webkit-keyframes arrow {
   0% {
     bottom: 140px;
   }
@@ -353,21 +494,58 @@ figure:hover h2 {
     bottom: 140px;
   }
 }
+@keyframes arrow {
+  0% {
+    bottom: 140px;
+  }
+  15% {
+    bottom: 150px;
+  }
+  30% {
+    bottom: 140px;
+  }
+  45% {
+    bottom: 150px;
+  }
+  60% {
+    bottom: 140px;
+  }
+}
+@-webkit-keyframes opacity {
+  from {opacity:0}
+}
 @keyframes opacity {
   from {opacity:0}
 }
     </style>
     <style name="Media Queries">
-      @media only screen and (max-width: 900px) {
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@media only screen and (max-width: 900px) {
   div.section {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   div.section div {width:80%}
 
   nav  {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction:column;
-    align-items: center;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height:100px;
     overflow:hidden;
     padding:10px;
@@ -378,13 +556,22 @@ figure:hover h2 {
     margin:5px;
   }
   nav.open {
+    height:-webkit-fit-content;
+    height:-moz-fit-content;
     height:fit-content;
     overflow:visible
   }
   .left {
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
-    flex-direction:row;
-    align-items:center
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:row;
+            flex-direction:row;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center
   }
   #mobileOpen{
     display: block !important;

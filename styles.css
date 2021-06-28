@@ -1,11 +1,21 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
-  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   color: rgb(233, 233, 240);
 }
 body > * {
-  animation:opacity 2s;
+  -webkit-animation:opacity 2s;
+          animation:opacity 2s;
 }
 html,body {
   height:100vh;
@@ -19,15 +29,25 @@ section.section#home {
   background-position: center;
   background-size: cover;
   position:relative;
-  animation:opacity 1s;
+  -webkit-animation:opacity 1s;
+          animation:opacity 1s;
   top:0;
   background-color: rgb(15, 15, 16);
 }
 .section{  
+  display: -webkit-box;  
+  display: -ms-flexbox;  
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;position:relative;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;position:relative;
   z-index:-1
 }
 .section:not(#home) {
@@ -43,35 +63,62 @@ section.section#home {
 }
 
 .arrow-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
-  transform:translateY(-50px);
+  -webkit-transform:translateY(-50px);
+      -ms-transform:translateY(-50px);
+          transform:translateY(-50px);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
 }
 p.arrow {
-  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   border: solid white;
   border-width: 0 1px 1px 0;
   padding: 5px;
-  filter:drop-shadow(0 0 5px black)
+  -webkit-filter:drop-shadow(0 0 5px black);
+          filter:drop-shadow(0 0 5px black)
 }
 #goDown {
-  animation: arrow 4s infinite;
+  -webkit-animation: arrow 4s infinite;
+          animation: arrow 4s infinite;
   z-index: 60;
   bottom: 130px;
   position: absolute;
   padding: 3px;
-  transform:scale(4) rotate(45deg)
+  -webkit-transform:scale(4) rotate(45deg);
+      -ms-transform:scale(4) rotate(45deg);
+          transform:scale(4) rotate(45deg)
 }
 div.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100vh;
 }
 
@@ -88,10 +135,14 @@ div.hero {
   left:-50%;
   right:0;
   top:100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   opacity: 0;
+  -webkit-transition:0.7s cubic-bezier(.50,0,0,1.5);
+  -o-transition:0.7s cubic-bezier(.50,0,0,1.5);
   transition:0.7s cubic-bezier(.50,0,0,1.5);
-  transform:translatey(-80px) scale(1) rotateX(90deg) skew(50deg);
+  -webkit-transform:translatey(-80px) scale(1) rotateX(90deg) skew(50deg);
+          transform:translatey(-80px) scale(1) rotateX(90deg) skew(50deg);
 }
 .tooltip:after {
   content: 'Donations are welcome but aren\'t expected. All donations go towards better stream gear and giveaways.';
@@ -110,5 +161,7 @@ div.hero {
 .tooltip:hover:after {
   opacity: 1;
   display:inline-block;
-  transform:translatey(0px) scale(1)
+  -webkit-transform:translatey(0px) scale(1);
+      -ms-transform:translatey(0px) scale(1);
+          transform:translatey(0px) scale(1)
 }
