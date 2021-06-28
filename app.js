@@ -13,17 +13,6 @@ function getEventTarget(e) {
   return e.target || e.srcElement;
 }
 
-var root = $('#main');
-$('a[href^="#"]').click(function () {
-  var href = $.attr(this, 'href');
-  root.animate({
-    scrollTop: $(href).offset().top
-  }, 1000, function () {
-    window.location.hash = href;
-  });
-  return false;
-});
-
 function link(t) {
   var v = window.open(t, '_blank');
   v.focus();
@@ -41,3 +30,8 @@ function navToggle() {
     nave.classList.add('open')
   }
 }
+
+setTimeout(function(){
+  document.querySelector('footer').style.opacity = '1'
+  document.querySelector('footer').style.transform = 'translateY(0px)'
+},1300)

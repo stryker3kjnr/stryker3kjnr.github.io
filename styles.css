@@ -4,6 +4,9 @@
   animation-duration: 1s;
   color: rgb(233, 233, 240);
 }
+body > * {
+  animation:opacity 2s;
+}
 html,body {
   height:100vh;
   width:100vw;
@@ -11,6 +14,14 @@ html,body {
 section.section#home {
   background-size:cover;
   height:80vh;
+  background-image: url("imgs/hero.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position:relative;
+  animation:opacity 1s;
+  top:0;
+  background-color: rgb(15, 15, 16);
 }
 .section{  
   display: flex;
@@ -64,79 +75,40 @@ div.hero {
   height: 100vh;
 }
 
-footer {
-  height: 80px;
-  background-color: rgb(15, 15, 16);
-
-  bottom: 0;
-  z-index: 1;
-  right: 0;
-  left: 0;
-  padding: 20px;
-  padding-top: 30px;
-}
-footer div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-footer div p {
-  font-size: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-@keyframes arrow {
-  0% {
-    bottom: 140px;
-  }
-  15% {
-    bottom: 150px;
-  }
-  30% {
-    bottom: 140px;
-  }
-  45% {
-    bottom: 150px;
-  }
-  60% {
-    bottom: 140px;
-  }
-}
 /* tooltips */
 .tooltip {
-  position: relative;
+  position: relative !important;
   cursor: pointer;
 }
-.tooltip:before,
 .tooltip:after {
   line-height: 1;
   font-size: .9em;
   pointer-events: none;
   position: absolute;
+  left:-50%;
+  right:0;
+  top:100%;
   box-sizing: border-box;
-  display: none;
   opacity: 0;
-}
-.tooltip:before {
-  content: "";
-  border: 5px solid transparent;
-  z-index: 100;
+  transition:0.7s cubic-bezier(.50,0,0,1.5);
+  transform:translatey(-80px) scale(1) rotateX(90deg) skew(50deg);
 }
 .tooltip:after {
   content: 'Donations are welcome but aren\'t expected. All donations go towards better stream gear and giveaways.';
   text-align: center;
   min-width: 3em;
-  max-width: 21em;
+  width:200%;
   padding: 12px 12px;
   border-radius: 3px;
-  background: #4621FF;
+  background: rgba(101, 66, 230, 0.479);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
   color: #FFFFFF;
   z-index: 99;
 }
 .tooltip:hover:before,
 .tooltip:hover:after {
-  display: block;
   opacity: 1;
+  display:inline-block;
+  transform:translatey(0px) scale(1)
 }
-

@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1">
     <title>Stryker3K Jnr
     </title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style name="Base">
       html {
@@ -28,10 +22,7 @@
         height: 100%;
         width: 100%;
         background-color: black;
-        background-image: url("imgs/hero.png");
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;
+        animation:opacity 1s;
         margin: 0;
         overflow-x: hidden;
         overflow-y: scroll;
@@ -54,6 +45,31 @@
         margin: 0;
         text-shadow: 0 0 10px black;
       }
+
+footer {
+  background-color: rgba(15, 15, 16, 1);
+position:fixed;
+  bottom: 0;
+  transition:0.5s;
+  z-index: -1;
+  height:60px;
+  right: 0;
+  left: 0;
+  padding: 10px;
+  opacity:0;
+  transform:translateY(70px)
+}
+footer div,footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer div p {
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
     </style>
     <style name="Wrap boxes">
         .wrap-box, .vouch-box {backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);display: flex;flex-direction:column;align-items:center;justify-content:center;width:40%;padding:20px;border-radius:20px/17px;background:rgba(255,255,255,0.1)}
@@ -94,41 +110,6 @@
         display: none;
         font-size:30px;
       }
-
-
-@media only screen and (max-width: 900px) {
-  div.section {
-    flex-direction: column;
-  }
-  div.section div {width:80%}
-
-  nav  {
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    height:100px;
-    overflow:hidden;
-    padding:10px;
-    padding-bottom:20px;
-  }
-  nav a {
-    padding:3px;
-    margin:5px;
-  }
-  nav.open {
-    height:fit-content;
-    overflow:visible
-  }
-  .left {
-    display:flex;
-    flex-direction:row;
-    align-items:center
-  }
-  #mobileOpen{
-    display: block !important;
-  } 
-}
-
     </style>
     <style name="Podcast">
       #podcast {
@@ -328,19 +309,23 @@ figure:hover h2 {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        transition:0.1s;
       }
       .section.discord .wrap-box h1 {
         width:100%;
       }
-      .section.discord .wrap-box hr {
-        width:100%;
+      .section.discord .wrap-box p {
+        opacity:0.8;
+        font-weight:500;
+        margin-bottom:10px;
       }
+
       .discord-button {
         background: rgb(84, 47, 232);
         width:100%;
         padding:10px;
         margin-top:10px;
-        border-radius:4px;
+        border-radius:6px;
         border:0;
         transition:0.2s;
       }
@@ -350,8 +335,75 @@ figure:hover h2 {
         box-shadow: 0 2px 5px rgba(0,0,0,0.2)
       }
     </style>
+    <style name="Animations">
+      @keyframes arrow {
+  0% {
+    bottom: 140px;
+  }
+  15% {
+    bottom: 150px;
+  }
+  30% {
+    bottom: 140px;
+  }
+  45% {
+    bottom: 150px;
+  }
+  60% {
+    bottom: 140px;
+  }
+}
+@keyframes opacity {
+  from {opacity:0}
+}
+    </style>
+    <style name="Media Queries">
+      @media only screen and (max-width: 900px) {
+  div.section {
+    flex-direction: column;
+  }
+  div.section div {width:80%}
+
+  nav  {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    height:100px;
+    overflow:hidden;
+    padding:10px;
+    padding-bottom:20px;
+  }
+  nav a {
+    padding:3px;
+    margin:5px;
+  }
+  nav.open {
+    height:fit-content;
+    overflow:visible
+  }
+  .left {
+    display:flex;
+    flex-direction:row;
+    align-items:center
+  }
+  #mobileOpen{
+    display: block !important;
+  } 
+}
+
+    </style>
   </head>
   <body>
+    <footer class="footer load-first">
+      <div>
+        <p>Stryker3K Jnr
+        </p>
+        <p>Website by 
+          <a href="https://pineapplerind.tk" style="display: inline; color: white; text-decoration: underline;">PineappleRind
+          </a>
+        </p>
+      </div>
+    </footer>
     <nav>
       <div class="left">
         <a href="website.html">
@@ -388,7 +440,7 @@ figure:hover h2 {
         <p id="goDown" class="arrow">
         </p>
       </div>
-      <svg id="visual" style="position:absolute;top:0;left:0;right:0;width:100vw;height:80vh;transform:translateY(5px)" preserveAspectRatio="none" viewBox="0 0 900 600"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 491L37.5 498.3C75 505.7 150 520.3 225 527.7C300 535 375 535 450 524.7C525 514.3 600 493.7 675 488C750 482.3 825 491.7 862.5 496.3L900 501L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z" fill="#0c0d11" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+      <svg id="visual" class="load-first" style="position:absolute;top:0;left:0;right:0;width:100vw;height:80vh;transform:translateY(5px)" preserveAspectRatio="none" viewBox="0 0 900 600"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 491L37.5 498.3C75 505.7 150 520.3 225 527.7C300 535 375 535 450 524.7C525 514.3 600 493.7 675 488C750 482.3 825 491.7 862.5 496.3L900 501L900 601L862.5 601C825 601 750 601 675 601C600 601 525 601 450 601C375 601 300 601 225 601C150 601 75 601 37.5 601L0 601Z" fill="#0c0d11" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
     </section>
     <div class="section about" id="about">
       <div class="wrap-box">
@@ -548,7 +600,7 @@ figure:hover h2 {
         </ul>
       </div>
     </div>
-    <div class="section scrollspy" id="merch">
+    <div class="section" id="merch">
       <div class="wrap-box">
         <h1>Merch
         </h1>
@@ -558,15 +610,14 @@ figure:hover h2 {
           </a>.
         </p>
       </div>
-      <iframe id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" allowfullscreen="" height="550px" width="450px" src="https://merch.streamelements.com/stryker3k_jnr" style="overflow: auto;">
-      </iframe>
+      <!--<iframe id="innerFrame" name="innerFrame" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" allowfullscreen="" height="550px" width="450px" src="https://merch.streamelements.com/stryker3k_jnr" style="overflow: auto;">
+      </iframe>-->
     </div>
-    <div class="section discord" id="contact-me" data="contact">
+    <div class="section discord"id="contact-me" data="contact">
       <a href="https://discord.gg/bq43X4j" target="_blank" class="wrap-box">
         <img class="logo-discord" src="imgs/logo.png">
         <h1>Join the Stryker3K Jnr's Office Discord Server!
         </h1>
-        <hr>
         <p>Check out the Stryker3K Jnr's Office community on Discord - hang out with other members and enjoy free voice and text chat.
         </p>
         <button class="discord-button">Join</button>
@@ -575,21 +626,8 @@ figure:hover h2 {
         Come join the Discord Server to meet new friends and find out a bit more about me!
       </h1>
     </div>
-    <footer class="footer">
-      <div>
-        <p>Stryker3K Jnr
-        </p>
-        <p>Website by 
-          <a href="https://pineapplerind.github.io" style="display: inline; color: white; text-decoration: underline;">PineappleRind
-          </a>
-        </p>
-      </div>
-    </footer>
+    <div style="height:60px;pointer-events: none;"></div>
     <script src="app.js">
-    </script>
-    <script type="text/javascript">
-      let credits = "Made by PineappleRind 2020"
-      console.log(credits)
     </script>
   </body>
 </html>
