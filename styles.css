@@ -1,167 +1,187 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
+@import 'nav.css';
+@import 'responsive.css';
+@import 'pages.css';
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  color: rgb(233, 233, 240);
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	color: rgb(233, 233, 240);
 }
-body > * {
-  -webkit-animation:opacity 2s;
-          animation:opacity 2s;
+
+body>* {
+	-webkit-animation: opacity 2s;
+	animation: opacity 2s;
 }
-html,body {
+
+html,
+body {
+	height: 100vh;
+	width: 100vw;
+}
+
+.section#home {
+	background-size: cover;
+	height: 80vh;
+	
+	position: relative;
+	-webkit-animation: opacity 1s;
+	animation: opacity 1s;
+	top: 0;
+	background-color: rgb(15, 15, 16);
+}
+.section#home::after {
+  content:'';
   height:100vh;
   width:100vw;
-}
-section.section#home {
-  background-size:cover;
-  height:80vh;
+  position:absolute;
+  z-index:-1;
   background-image: url("imgs/hero.png");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  position:relative;
-  -webkit-animation:opacity 1s;
-          animation:opacity 1s;
-  top:0;
-  background-color: rgb(15, 15, 16);
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
 }
-.section{  
-  display: -webkit-box;  
-  display: -ms-flexbox;  
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;position:relative;
-  z-index:-1
+
+.section {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: space-evenly;
+	-ms-flex-pack: space-evenly;
+	justify-content: space-evenly;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	position: relative;
+	z-index: -1
 }
+
 .section:not(#home) {
-  background: #0c0d11;
-  padding:100px 10px;
-  width:100vw;
-  margin:0;
-  overflow:hidden;
-  border-bottom: 1px solid #333;
-}
-.logo-wrap .logo {
-  height: 200px;
+	background: #0c0d11;
+	padding: 100px 10px;
+	width: 100vw;
+	margin: 0;
+	overflow: hidden;
+	border-bottom: 1px solid #333;
 }
 
 .arrow-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  -webkit-transform:translateY(-50px);
-      -ms-transform:translateY(-50px);
-          transform:translateY(-50px);
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-p.arrow {
-  -ms-transform: rotate(45deg);
-      transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  border: solid white;
-  border-width: 0 1px 1px 0;
-  padding: 5px;
-  -webkit-filter:drop-shadow(0 0 5px black);
-          filter:drop-shadow(0 0 5px black)
-}
-#goDown {
-  -webkit-animation: arrow 4s infinite;
-          animation: arrow 4s infinite;
-  z-index: 60;
-  bottom: 130px;
-  position: absolute;
-  padding: 3px;
-  -webkit-transform:scale(4) rotate(45deg);
-      -ms-transform:scale(4) rotate(45deg);
-          transform:scale(4) rotate(45deg)
-}
-div.hero {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100vh;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 100%;
+	-webkit-transform: translateY(-50px);
+	-ms-transform: translateY(-50px);
+	transform: translateY(-50px);
+	height: -webkit-fit-content;
+	height: -moz-fit-content;
+	height: fit-content;
 }
 
-/* tooltips */
-.tooltip {
-  position: relative !important;
-  cursor: pointer;
+p.arrow {
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	border: solid white;
+	border-width: 0 1px 1px 0;
+	padding: 5px;
+	-webkit-filter: drop-shadow(0 0 5px black);
+	filter: drop-shadow(0 0 5px black)
 }
-.tooltip:after {
-  line-height: 1;
-  font-size: .9em;
-  pointer-events: none;
-  position: absolute;
-  left:-50%;
-  right:0;
-  top:100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  opacity: 0;
-  -webkit-transition:0.7s cubic-bezier(.50,0,0,1.5);
-  -o-transition:0.7s cubic-bezier(.50,0,0,1.5);
-  transition:0.7s cubic-bezier(.50,0,0,1.5);
-  -webkit-transform:translatey(-80px) scale(1) rotateX(90deg) skew(50deg);
-          transform:translatey(-80px) scale(1) rotateX(90deg) skew(50deg);
+
+#goDown {
+	-webkit-animation: arrow 4s infinite;
+	animation: arrow 4s infinite;
+	z-index: 60;
+	bottom: 130px;
+	position: absolute;
+	padding: 3px;
+	-webkit-transform: scale(4) rotate(45deg);
+	-ms-transform: scale(4) rotate(45deg);
+	transform: scale(4) rotate(45deg)
 }
-.tooltip:after {
-  content: 'Donations are welcome but aren\'t expected. All donations go towards better stream gear and giveaways.';
-  text-align: center;
-  min-width: 3em;
-  width:200%;
-  padding: 12px 12px;
-  border-radius: 3px;
-  background: rgba(101, 66, 230, 0.479);
-  backdrop-filter:blur(8px);
-  -webkit-backdrop-filter:blur(8px);
-  color: #FFFFFF;
-  z-index: 99;
+
+div.hero {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height: 100vh;
 }
-.tooltip:hover:before,
-.tooltip:hover:after {
-  opacity: 1;
-  display:inline-block;
-  -webkit-transform:translatey(0px) scale(1);
-      -ms-transform:translatey(0px) scale(1);
-          transform:translatey(0px) scale(1)
+
+.wrap-box {
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 40%;
+	padding: 20px;
+	border-radius: 20px/17px;
+	background: rgba(255, 255, 255, 0.1)
+}
+
+.wrap-box div {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-align: left;
+}
+
+.wrap-box div hr,
+.wrap-box hr {
+	width: 80%;
+	opacity: 0.6;
+	margin: 5px
+}
+
+.wrap-box img {
+	height: 100px;
+}
+
+.wrap-box div p {
+	width: 70%;
+	text-align: center
 }

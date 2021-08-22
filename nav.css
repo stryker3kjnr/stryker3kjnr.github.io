@@ -1,0 +1,71 @@
+nav {
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index:10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.2s;
+  }
+  nav img {
+    height:80px;
+  }
+  nav a {
+    color: white;
+    padding:20px;
+    transition: 0.2s;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  nav #mobileOpen {
+    display: none;
+    font-size:30px;
+  }
+
+  .tooltip {
+    position: relative !important;
+    cursor: pointer;
+  }
+  .tooltip:after {
+    font-size: .9em;
+    pointer-events: none;
+    position: absolute;
+    left:-50%;
+    right:0;
+    top:100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    opacity: 0;
+    -webkit-transition:0.3s cubic-bezier(.50,0,0,1.5);
+    -o-transition:0.3s cubic-bezier(.50,0,0,1.5);
+    transition:0.3s cubic-bezier(.50,0,0,1.5);
+    -webkit-transform:translatey(-80px) scale(0.7);
+            transform:translatey(-80px) scale(0.7) ;
+    content: 'Donations are welcome but aren\'t expected. All donations go towards better stream gear and giveaways.';
+    text-align: center;
+    min-width: 3em;
+    width:200%;
+    padding: 12px 12px;
+    border-radius: 3px;
+    background: rgba(102, 66, 230, 0.856);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    color: #FFFFFF;
+    z-index: -2 !important;
+  }
+  .tooltip:hover:before,
+  .tooltip:hover:after {
+    opacity: 1;
+    display:inline-block;
+    -webkit-transform:translatey(0px) scale(1);
+        -ms-transform:translatey(0px) scale(1);
+            transform:translatey(0px) scale(1)
+  }
